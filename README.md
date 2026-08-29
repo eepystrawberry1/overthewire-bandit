@@ -7,3 +7,13 @@
 **what i learned** Can't use the command "cat" on a file named - you have to add ./ or .. before the -
 #level2-->level3:
 **what i learned** for when a file name has spaces you add -- before file name (and file name between "") 
+#level3-->level4:
+**commands used** "cd" (moves u to the directory u name), "ls -la" (lists in details the content of the whole directory including the hidden files), "cat+." (we add the . when the file is hidden). 
+level4-->level5:
+**commands used** "file" (tells u what type of data ur file is in), using "*" means including every single file in the directory
+[cat works one files]
+[cd works on directories] 
+#level5-->level6:
+**commands i used**: "find" (reaches subdirectories and subdolders 
+find . -type f (search inside current directory (.) for a regular file (type f))
+
