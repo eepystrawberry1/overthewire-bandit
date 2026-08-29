@@ -28,3 +28,7 @@ exp: grep+ what u r looking for between '
 exp: sort data.txt | uniq -u 
 #level9-->level10:
 **commands i used**: "strings" (outputs the text existing within binary data in a file)
+#level10-->level11:
+**commands i used**: "base64 -d filename" (decodes the file to readable text)
+#level11-->level12: 
+**commands i used**: "tr" (used when Rot13 is needed)+ has other uses.
