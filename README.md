@@ -21,7 +21,10 @@ level6-->level7:
 ["find" output is a file path] 
 #level7-->level8:
 **what i learned**: "grep" (used to find lines that match pattern you gave) 
+exp: grep+ what u r looking for between '
 #level8-->level9:
 **commands i used**: "uniq" only compares line next to eachother so u hv to use "sort" (groups the identical lines together)
 **what i learned**: we can use two commands in one line separated by | (the output of the first command is the input of the second command). 
 exp: sort data.txt | uniq -u 
+#level9-->level10:
+**commands i used**: "strings" (outputs the text existing within binary data in a file)
