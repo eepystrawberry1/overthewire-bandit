@@ -16,4 +16,12 @@ level4-->level5:
 #level5-->level6:
 **commands i used**: "find" (reaches subdirectories and subdolders 
 find . -type f (search inside current directory (.) for a regular file (type f))
-
+level6-->level7:
+**commands i used**: "find /" (searches starting from the root), 
+["find" output is a file path] 
+#level7-->level8:
+**what i learned**: "grep" (used to find lines that match pattern you gave) 
+#level8-->level9:
+**commands i used**: "uniq" only compares line next to eachother so u hv to use "sort" (groups the identical lines together)
+**what i learned**: we can use two commands in one line separated by | (the output of the first command is the input of the second command). 
+exp: sort data.txt | uniq -u 
