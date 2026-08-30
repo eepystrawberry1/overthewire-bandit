@@ -33,5 +33,5 @@ exp: sort data.txt | uniq -u
 #level11-->level12: 
 **commands i used**: "tr" (used when Rot13 is needed)+ has other uses.
 #level12-->level13:
-**commands i used** "xxd" (make a hexdump or the reverse (xxd -r)), "mktemp" (to create a temporary file or directory) [mktemp -d creates a uniq temporary directory no one can use], "cp" (copies the wanted file into the wanted destination , if not specified its copied into your working directory), "file filename" (tells u what the original type of the content is)
+**commands i used** "xxd" (make a hexdump or the reverse (xxd -r)), "mktemp" (to create a temporary file or directory) [mktemp -d creates a uniq temporary directory no one can use], "cp" (copies the wanted file into the wanted destination , if not specified its copied into your working directory), "file filename" (tells u what the original type of the content is), "gzip -d" (unpacks a gzip type file, should end in [.gz]), "bzip2 -d" (unpacks a bzip2 type file, should end in [.bz2]), "tar -xf" (unpacks type tar archive data, should end in [.tar])
 **what i learned**: /tmp is a standard system directory in Linux OS used to store temporary files. A compressed Linux file changes its original extension.
