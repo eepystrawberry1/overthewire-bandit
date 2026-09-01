@@ -1,37 +1,51 @@
-#level 0:
-**Commands used:** "ssh" (allows to operate network services remotely).
-**Syntax:** "ssh username@hostname -p portnb"
-#level0--> level1:
-**commands used** "cat" (to extract what's inside for the file) "exit" (needed so u can use ssh to log into the next level) 
-#level1-->level2:
-**what i learned** Can't use the command "cat" on a file named - you have to add ./ or .. before the -
-#level2-->level3:
-**what i learned** for when a file name has spaces you add -- before file name (and file name between "") 
-#level3-->level4:
-**commands used** "cd" (moves u to the directory u name), "ls -la" (lists in details the content of the whole directory including the hidden files), "cat+." (we add the . when the file is hidden). 
-level4-->level5:
-**commands used** "file" (tells u what type of data ur file is in), using "*" means including every single file in the directory
-[cat works one files]
-[cd works on directories] 
-#level5-->level6:
-**commands i used**: "find" (reaches subdirectories and subdolders 
-find . -type f (search inside current directory (.) for a regular file (type f))
-level6-->level7:
-**commands i used**: "find /" (searches starting from the root), 
-["find" output is a file path] 
-#level7-->level8:
-**what i learned**: "grep" (used to find lines that match pattern you gave) 
-exp: grep+ what u r looking for between '
-#level8-->level9:
-**commands i used**: "uniq" only compares line next to eachother so u hv to use "sort" (groups the identical lines together)
-**what i learned**: we can use two commands in one line separated by | (the output of the first command is the input of the second command). 
-exp: sort data.txt | uniq -u 
-#level9-->level10:
-**commands i used**: "strings" (outputs the text existing within binary data in a file)
-#level10-->level11:
-**commands i used**: "base64 -d filename" (decodes the file to readable text)
-#level11-->level12: 
-**commands i used**: "tr" (used when Rot13 is needed)+ has other uses.
-#level12-->level13:
-**commands i used** "xxd" (make a hexdump or the reverse (xxd -r)), "mktemp" (to create a temporary file or directory) [mktemp -d creates a uniq temporary directory no one can use], "cp" (copies the wanted file into the wanted destination , if not specified its copied into your working directory), "file filename" (tells u what the original type of the content is), "gzip -d" (unpacks a gzip type file, should end in [.gz]), "bzip2 -d" (unpacks a bzip2 type file, should end in [.bz2]), "tar -xf" (unpacks type tar archive data, should end in [.tar])
-**what i learned**: /tmp is a standard system directory in Linux OS used to store temporary files. A compressed Linux file changes its original extension.
+## Bandit Level Notes
+
+### Level 0
+* **`ssh username@hostname -p port`** – Connects to network services remotely.
+
+### Level 0 → Level 1
+* **`cat file`** – Prints the content of a file.
+* **`exit`** – Closes the current SSH session so you can log into the next level.
+
+### Level 1 → Level 2
+* **Handling `-` filenames:** You cannot use `cat -` directly because `-` means stdin. Use `./-` instead.
+
+### Level 2 → Level 3
+* **Filenames with spaces:** Wrap the filename in quotes or put `--` before the filename (e.g., `cat -- "file name"`).
+
+### Level 3 → Level 4
+* **`cd directory`** – Navigates to a specific directory.
+* **`ls -la`** – Lists all files in detail, including hidden files (files starting with `.`).
+
+### Level 4 → Level 5
+* **`file filename`** – Reveals the true file type of a file.
+* **`*` wildcard** – Expands to include every file in the current directory.
+
+### Level 5 → Level 6
+* **`find . -type f`** – Searches the current directory (`.`) for regular files (`-type f`).
+
+### Level 6 → Level 7
+* **`find /`** – Searches starting from the root directory (`/`).
+
+### Level 7 → Level 8
+* **`grep 'pattern' file`** – Searches and prints lines matching a specific pattern.
+
+### Level 8 → Level 9
+* **`sort file | uniq -u`** – `uniq` only checks adjacent lines, so you must pipe `sort` into `uniq -u` to extract unique lines.
+
+### Level 9 → Level 10
+* **`strings file`** – Extracts human-readable text from binary data.
+
+### Level 10 → Level 11
+* **`base64 -d file`** – Decodes Base64 encoded data back to plain text.
+
+### Level 11 → Level 12
+* **`tr 'A-Za-z' 'N-ZA-Mn-za-m'`** – Decodes ROT13 shifted text.
+
+### Level 12 → Level 13
+* **`mktemp -d`** – Creates a unique temporary directory inside `/tmp`.
+* **`cp source destination`** – Copies a file to a target directory.
+* **`xxd -r input > output`** – Reverts a hex dump back into binary data.
+* **`gzip -d file.gz`** – Decompresses `.gz` files.
+* **`bzip2 -d file.bz2`** – Decompresses `.bz2` files.
+* **`tar -xf file.tar`** – Extracts `.tar` archive files.
